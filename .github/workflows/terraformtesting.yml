@@ -17,9 +17,9 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
         
-      - name: ✅ Allow PowerShell scripts temporarily
-        shell: powershell
-        run: Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+      # - name: ✅ Allow PowerShell scripts temporarily
+      #   shell: powershell
+      #   run: Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 
 
       - name: 🛠️ Set up Terraform
