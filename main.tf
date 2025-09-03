@@ -21,5 +21,15 @@ key = "dev-cp.tfstate"
 
 provider "azurerm" {
   features {}
-  subscription_id = "a31b354c-d961-43d8-b6c2-57a22c72a3db"
+
+  client_id       = env("ARM_CLIENT_ID")
+  client_secret   = env("ARM_CLIENT_SECRET")
+  subscription_id = env("ARM_SUBSCRIPTION_ID")
+  tenant_id       = env("ARM_TENANT_ID")
 }
+
+resource "azurerm_resource_group" "rg" {
+  name     = "rg-from-gh-actions"
+  location = "East US"
+}
+
