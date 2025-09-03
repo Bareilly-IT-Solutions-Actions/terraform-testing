@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:  # ✅ Secrets ko yahan define kar diya, saare steps me auto available
+    env:  # ✅ All secrets available to both backend + provider
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
@@ -16,11 +16,6 @@ jobs:
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
-        
-      # - name: ✅ Allow PowerShell scripts temporarily
-      #   shell: powershell
-      #   run: Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
-
 
       - name: 🛠️ Set up Terraform
         uses: hashicorp/setup-terraform@v3
