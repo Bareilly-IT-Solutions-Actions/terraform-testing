@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     env:  # ✅ Secrets ko yahan define kar diya, saare steps me auto available
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
