@@ -1,5 +1,5 @@
-resource "azurerm_resource_group" "rg" {
-  name     = "cp-rg"
+resource "azurerm_resource_group" "rg-c" {
+  name     = "cpg-rg"
   location = "West Europe"
 }
 
@@ -13,7 +13,7 @@ terraform {
 backend "azurerm"  {
 storage_account_name= "hcl9999999"
 container_name= "hclcontainer"
-resource_group_name = "cprg"
+resource_group_name = "RG1"
 key = "dev-cp.tfstate"
 }
 
